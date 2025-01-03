@@ -1,0 +1,185 @@
+body{
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+  flex:1;
+}
+
+
+/* Navbar */
+.navbar{
+  height: 5rem;
+  background-color: #fff !important;
+}
+
+.bi-backpack3{
+  color: #fe424d;
+  font-size: 2.5rem;
+}
+
+.btn-search{
+  background-color: #fe424d !important;
+  color: white !important;
+  border-radius: 25px !important;
+  padding: 0 1rem !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-search i{
+  margin-right: 0.5rem !important;
+}
+
+.search-input{
+  border-radius: 25px !important;
+  padding: 0.5rem 3rem !important;
+}
+
+/* footer */
+
+.f-info{
+  background-color: #ebebeb;
+  height:8rem;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.f-info-socials,.f-info-copywrite,.f-info-links{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-info-socials a i{
+  font-size: 2rem;
+  margin-right: 1rem;
+  text-decoration: none !important;
+  list-style: none !important;
+}
+
+.f-info-links a{
+  text-decoration: none;
+  color: #222;
+  margin-right: 1rem;
+  transition: all 1s;
+}
+
+.f-info-links a:hover{
+  text-decoration: underline;
+}
+
+/* //cards */
+
+.listing-card{
+  border: none !important;
+  margin-bottom: 2rem !important;
+}
+
+.card-img-top{
+  width: 100% !important;
+  height: 20rem !important;
+  object-fit: cover !important;
+  border-radius: 20px !important;
+}
+
+.card-body{
+  padding: 0 !important;
+}
+
+.card-text{
+  font-weight: 500 !important;
+}
+
+.listing-link{
+ text-decoration: none !important;
+}
+
+.card-img-overlay{
+  opacity: 0;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+
+.card-img-overlay:hover{
+  opacity: 0.2;
+}
+
+/* New.ejs */
+
+.add-btn{
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+
+/* edit.ejs */
+
+.edit-btn{
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+
+  /* show.ejs */
+
+.show-img{
+  width: 100% !important;
+  height: 30vh !important;
+}
+
+.btns{
+  display: flex;
+}
+
+
+/* Maps */
+
+#map{
+  height: 200px;
+  width: 100vh;
+}
+
+/*Lower Navbar */
+
+#filters {
+  display: flex;
+  flex: wrap;
+  align-items: center;
+}
+.filter {
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+i {
+  font-size: 1.4rem;
+}
+
+.tax-info {
+  display: none;
+  font-size: 0.8rem;
+}
+
+.tax-toggle {
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 1rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}

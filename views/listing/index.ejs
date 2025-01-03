@@ -1,0 +1,78 @@
+<% layout("/layouts/boilerplate") -%>
+<div id="filters">
+  <div class="filter">
+    <div><i class="bi bi-fire"></i></div>
+    <p>Trending</p>
+  </div>
+  <div class="filter">
+    <div><i class="bi bi-key-fill"></i></div>
+    <p>New</p>
+  </div>
+  <div class="filter">
+    <div><i class="bi bi-tree-fill"></i></div>
+    <p>Nature</p>
+  </div>
+  <div class="filter">
+    <div><i class="bi bi-truck-front-fill"></i></div>
+    <p>Motor Home</p>
+  </div>
+  <div class="filter">
+    <div><i class="bi bi-tsunami"></i></div>
+    <p>Beach Side</p>
+  </div>
+  <div class="filter">
+    <div><i class="bi bi-house"></i></div>
+    <p>Bnb</p>
+  </div>
+  <div class="filter">
+    <div><i class="bi bi-buildings-fill"></i></div>
+    <p>Hotels</p>
+  </div>
+  <div class="filter">
+    <div><i class="bi bi-backpack3-fill"></i></div>
+    <p>Backpackers</p>
+  </div>
+  <div class="filter">
+    <div><i class="bi bi-binoculars-fill"></i></div>
+    <p>Explore</p>
+  </div>
+  <div class="filter">
+    <div><i class="bi bi-snow"></i></div>
+    <p>Artic</p>
+  </div>
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="flexSwitchCheckDefault"
+      />
+      <label class="form-check-label" for="flexSwitchCheckDefault"
+        >Display Taxes</label
+      >
+    </div>
+  </div>
+</div>
+<h2>Welcome!</h2>
+<!-- <form action="/listings/new" method="get">
+    <button>Create New Listing</button>
+  </form> -->
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1">
+  <% for(let lists of allListings) { %>
+  <a href="/listings/<%= lists.id %>" class="listing-link">
+    <div class="card col listing-card">
+      <img src="<%= lists.image.url %>" class="card-img-top" alt="image" />
+      <div class="card-img-overlay"></div>
+      <div class="card-body">
+        <p class="card-text"><%= lists.title %></p>
+        <p>
+          &#8377; <%= lists.price.toLocaleString("en-IN") %>/Night
+          <i class="tax-info">&nbsp;&nbsp;+18% Gst</i>
+        </p>
+      </div>
+    </div>
+  </a>
+
+  <% } %>
+</div>
