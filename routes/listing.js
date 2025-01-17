@@ -23,6 +23,8 @@ router
 //New Route
 router.get("/new", isLoggedIn, listingControllers.new);
 
+router.get("/search", wrapAsync(listingControllers.search));
+
 //Show & Update & Delete Route
 router
   .route("/:id")

@@ -13,6 +13,39 @@ module.exports.new = (req, res) => {
   res.render("./listing/new.ejs");
 };
 
+module.exports.search = async (req, res) => {
+  console.log("Search request received:", req.query.searchQuery); // Log the query
+
+  const { searchQuery } = req.query;
+
+  // Check if the search query exists
+  if (!searchQuery) {
+    req.flash("error", "Enter Location.");
+    return res.redirect("/listings");
+  }
+
+  try {
+    // Case-insensitive search for both location and country
+    const listings = await Listing.find({
+      $or: [
+        { location: { $regex: searchQuery, $options: "i" } }, // Search by location
+        { country: { $regex: searchQuery, $options: "i" } }, // Search by country
+      ],
+    });
+
+    if (listings.length === 0) {
+      req.flash("error", "No listings found.");
+      return res.redirect("/listings");
+    }
+
+    // Render the page with the listings
+    res.render("listing/index", { allListings: listings });
+  } catch (err) {
+    req.flash(err, "No listings found.");
+    return res.redirect("/listings");
+  }
+};
+
 module.exports.show = async (req, res) => {
   const { id } = req.params;
   const listing = await Listing.findById(id)

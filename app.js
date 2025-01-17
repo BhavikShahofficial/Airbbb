@@ -56,7 +56,7 @@ const sessionOptions = {
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
-  Cookie: {
+  cookie: {
     expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
     maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
@@ -104,7 +104,7 @@ app.use((err, req, res, next) => {
   // res.send("something went Wrong!");
 });
 
-//lisiting
+//listing
 app.listen(1211, (req, res) => {
   console.log("Server is running on port 1211");
 });

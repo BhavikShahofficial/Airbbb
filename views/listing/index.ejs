@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate") -%>
-<div id="filters">
+<div id="filters" class="horizontal-scroller">
   <div class="filter">
     <div><i class="bi bi-fire"></i></div>
     <p>Trending</p>
@@ -38,7 +38,7 @@
   </div>
   <div class="filter">
     <div><i class="bi bi-snow"></i></div>
-    <p>Artic</p>
+    <p>Arctic</p>
   </div>
   <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
@@ -48,12 +48,13 @@
         role="switch"
         id="flexSwitchCheckDefault"
       />
-      <label class="form-check-label" for="flexSwitchCheckDefault"
-        >Display Taxes</label
-      >
+      <label class="form-check-label" for="flexSwitchCheckDefault">
+        Display Taxes
+      </label>
     </div>
   </div>
 </div>
+
 <h2>Welcome!</h2>
 <!-- <form action="/listings/new" method="get">
     <button>Create New Listing</button>

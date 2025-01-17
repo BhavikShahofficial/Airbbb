@@ -22,14 +22,20 @@
 })();
 
 // lower nav
-let taxSwitch = document.getElementById("flexSwitchCheckDefault");
-taxSwitch.addEventListener("click", () => {
-  let taxtoggle = document.getElementsByClassName("tax-info");
-  for (info of taxtoggle) {
-    if (info.style.display != "inline") {
-      info.style.display = "inline";
-    } else {
-      info.style.display = "none";
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  const taxSwitch = document.getElementById("flexSwitchCheckDefault");
+
+  if (taxSwitch) {
+    taxSwitch.addEventListener("click", () => {
+      const taxToggle = document.getElementsByClassName("tax-info");
+
+      // Toggle display for each element
+      for (let info of taxToggle) {
+        info.style.display =
+          info.style.display === "inline" ? "none" : "inline";
+      }
+    });
+  } else {
+    console.error("Tax switch element not found!");
   }
 });
